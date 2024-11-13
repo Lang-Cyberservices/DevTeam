@@ -1,0 +1,40 @@
+/* Reset CSS - Remove a formatação padrão de todos os elementos */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif; /* ou a fonte que você desejar */
+  border: 0; /* Remove bordas */
+}
+
+body {
+  line-height: 1; /* Garante que o texto tenha o espaçamento entre linhas consistente */
+  background-color: #fff; /* Define o fundo branco */
+}
+
+ul, ol {
+  list-style: none; /* Remove marcadores de listas */
+}
+
+a {
+  text-decoration: none; /* Remove o sublinhado padrão dos links */
+  color: inherit; /* Links herdam a cor do texto */
+}
+
+button {
+  background: none; /* Remove fundo padrão */
+  border: none; /* Remove borda de botões */
+  padding: 0; /* Remove o padding do botão */
+}
+
+input, textarea, select {
+  outline: none; /* Remove o contorno dos campos de input ao focar */
+  border: none; /* Remove borda de campos de entrada */
+}
+
+html, body {
+  height: 100%;
+}
