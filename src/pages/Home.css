@@ -12,8 +12,7 @@
 
 body {
   line-height: 1; /* Garante que o texto tenha o espaçamento entre linhas consistente */
-  background-color: #fff; /* Define o fundo branco */
-}
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);}
 
 ul, ol {
   list-style: none; /* Remove marcadores de listas */

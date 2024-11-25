@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
+
+import logo from "../assets/images/logo.png";
 
 const Navbar: React.FC = () => {
   const [isNavExpanded, setNavExpanded] = useState(false);
@@ -25,23 +27,32 @@ const Navbar: React.FC = () => {
 
   return (
     <header>
-      <nav className={`navbar`} ref={ref}>
-        <div className={`nav-center`}>
-          <ul className={`nav-links ${isNavExpanded ? 'expanded' : ''}`}>
-            <li>
-              <Link className="nav-item" to="/">Home</Link>
-            </li>
-            <li>
-              <Link className="nav-item" to="/sobre">Quem Sou</Link>
-            </li>
-            <li>
-              <Link className="nav-item" to="/contato">Contato</Link>
-            </li>
+      <nav 
+        className={`navbar`} 
+        data-expanded={isNavExpanded} // Adicionando o atributo data-expanded
+        ref={ref} 
+        data-test="component-navbar" 
+        aria-expanded={isNavExpanded}
+      >
+        <div className="brand">
+          <img src={logo} alt="" className="logo nav-item menu"/>
+        </div>      
+
+        <div className={`nav-center ${isNavExpanded ? 'show' : ''}`}>
+          <ul>
+            <li><Link className="nav-item menu" to="/">Inicio</Link></li>
+            <li><Link className="nav-item menu" to="/sobre">Sobre Nós</Link></li>           
+            <li><Link className="nav-item menu" to="/projetos">Projetos</Link></li>
+            <li><Link className="nav-item menu" to="/contact">Contato</Link></li>
           </ul>
-          <button className="nav-toggle" onClick={toggleNav}>
-            {isNavExpanded ? 'X' : '☰'}
-          </button>
         </div>
+
+
+        <button className="hamburger" onClick={toggleNav}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
       </nav>
     </header>
   );
